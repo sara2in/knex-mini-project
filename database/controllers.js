@@ -23,6 +23,9 @@ module.exports = {
     },
     removeBirthday: (paramName) => {
       return knex.select("*").from("birthdays").where({name: paramName}).del();
-  },
+    },
+    getAllCars: () => {
+        return knex.select("*").from("cars");
+    },
 }
 
