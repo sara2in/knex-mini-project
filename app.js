@@ -9,29 +9,37 @@ app.use(morgan('tiny'));
 app.use(express.json());
 //Routes
 app
-    .route('/birthdays/')
+    .route('/birthdays')
     .get((req, res) => {
-        let{ astrologySign } = req.query;
-        if(astrologySign !== undefined) {
-            db.getBirthdayBySign(astrologySign)
+        // let{ astrologySign } = req.query;
+        // if(astrologySign !== undefined) {
+        //     db.getBirthdayBySign(astrologySign)
+        //     .then((data) => res.send(data))
+        //     .catch((err) => {
+        //         console.error(err);
+        //         res.status(404).json({ message: "Nothing here!" })
+        //     }
+        //     );
+        // } 
+        console.log('query:', req.query)
+        if (req.query !== {}) {
+            db.handleQueries(req.query)
             .then((data) => res.send(data))
             .catch((err) => {
                 console.error(err);
                 res.status(404).json({ message: "Nothing here!" })
-            }
-            );
+            });
         } else {
             db.getAllBirthdays()
             .then((data) => res.send(data))
             .catch((err) => {
                 console.error(err);
                 res.status(404).json({ message: "Nothing here!" })
-            }
-            );
+            });
         }
     })
     .post((req, res) => {
-        db.postBirthday(req)
+        db.postBirthday(req.body)
             .then((data) => res.status(201).json(data))
             .catch((err) => {
                 console.error(err);
@@ -48,8 +56,7 @@ app
         .catch((err) => {
             console.error(err);
             res.status(404).json({ message: "Nothing here!" })
-        }
-        );
+        });
     })
     .put((req, res) => {
         db.replaceBirthday(req.params.name, req.body)
@@ -65,7 +72,7 @@ app
             .catch((err) => {
                 console.error(err);
                 res.status(404).json({ message: "Something is wrong." })
-        });
+            });
     })
     .delete((req, res) => {
         db.removeBirthday(req.params.name)

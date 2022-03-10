@@ -13,7 +13,7 @@ exports.seed = async function(knex) {
     {name: 'Natalie Portman', birthday: "1981-06-09", party_this_year: false, astrology_id: 5, zodiac_id: 7},
     {name: 'Robert Downey Jr.', birthday: "1965-04-04", party_this_year: true, astrology_id: 4, zodiac_id: 3},
     {name: 'Halla Berry', birthday: "1966-08-14", party_this_year: true, astrology_id: 7, zodiac_id: 5},
-    {name: 'Will  Smith', birthday: "1968-09-25", party_this_year: true, astrology_id: 9, zodiac_id: 7},
+    {name: 'Will Smith', birthday: "1968-09-25", party_this_year: true, astrology_id: 9, zodiac_id: 7},
     {name: 'Keith David', birthday: "1956-06-04", party_this_year: false, astrology_id: 5, zodiac_id: 7},
     {name: 'Awkwafina', birthday: "1988-06-02", party_this_year: true, astrology_id: 5, zodiac_id: 3}
   ]);

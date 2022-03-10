@@ -18,4 +18,4 @@ Welcome! This is an Express app running within a Docker container that is able t
 
 ***A .ENV file will need to be created in order for this app to work.*** The .DOT file should contain the login information for your Postgres Server in order for this records to be correctly manipulated or accessed.
 
-The application follows the CRUDL methodology is can be updated via HTTP requests.  Additionally, you are able to query a specific celebrity within the database by [*BIRTHDAYS/NAME || BIRTHDAYS/FIRST_NAME%20LAST_NAME*] or by their astrological sign by [*BIRTHDAYS?astrologySign={DESIRED SIGN W/ FIRST LETTER CAPITALIZED}*].
+The application follows the CRUDL methodology is can be updated via HTTP requests.  Additionally, you are able to query a specific celebrity within the database by [*BIRTHDAYS/NAME || BIRTHDAYS/FIRST_NAME%20LAST_NAME*] or by any of the other data entries by [*BIRTHDAYS?astrologySign={DESIRED SIGN W/ FIRST LETTER CAPITALIZED}*] as well as additional parameters with an & [*BIRTHDAYS?astrologySign={DESIRED SIGN W/ FIRST LETTER CAPITALIZED}&PARTY_THIS_YEAR={TRUE OR FALSE}*].
