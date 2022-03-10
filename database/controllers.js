@@ -24,6 +24,9 @@ module.exports = {
     removeBirthday: (paramName) => {
       return knex.select("*").from("birthdays").where({name: paramName}).del();
     },
+    getAtrologySigns: () => {
+        return knex.select("*").from("astrology");
+    },
     getAllCars: () => {
         return knex.select("*").from("cars");
     },

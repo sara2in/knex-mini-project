@@ -15,4 +15,13 @@ app.get('/', (req, res) => {
     res.status(200).send('Creep on your favorite celebrities.')
 });
 
+app.get('/atrology', (req, res) => {
+    db.getAtrologySigns()
+    .then((data) => res.send(data))
+    .catch((err) => {
+        console.error(err);
+        res.status(404).json({ message: "Nothing here!" })
+    });
+});
+
 module.exports = app;
